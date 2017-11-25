@@ -1,0 +1,107 @@
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	background: linear-gradient(to right, transparent, rgba(255,255,255,0.8) 30%,rgba(255,255,255,0.8) 70%, transparent), url('../images/bg.jpg');
+	background-size: cover;
+}
+.radio{
+	display: inline-block;
+	margin-right: 20px;
+}
+.radio input{
+	display: none;
+}
+.radio label{
+	position: relative;
+	padding-left: 20px;
+}
+.radio label::before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 16px;
+	width: 16px;
+	border: 1px solid #dad9d9;
+	border-radius: 50%;
+}
+.radio input:checked + label::after{
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	top: 4px;
+	left: 4px;
+	background: #a60328;
+	position: absolute;
+}
+main{
+	max-width: 600px;
+	margin: 0 auto;
+}
+h1{
+	text-align: center;
+}
+.wrapper{
+	display: flex;
+	margin-top: 40px;
+}
+.form{
+	width: 70%;
+}
+.result{
+	width: 30%;
+	padding-top: 20px;
+	text-align: center;
+	box-shadow: 0 2px 18px #ccc;
+	background: white;
+}
+.submit-wrapper{
+	margin-top: 20px;
+}
+.btn-red{
+	background: #a60328;
+	color: white;
+}
+.btn-red:hover,
+.btn-red:focus{
+	color: white;
+}
+header{
+	box-shadow: 0 0 20px #ccc;
+	padding: 10px; 
+	text-align: center;
+	background: white;
+}
+.logo{
+	vertical-align: middle;
+}
+.logo-text{
+	font-size: 40px;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #a60328;
+	font-weight: 100;
+}
+.like, 
+.dislike{
+	background-image: url('../images/like.png');
+	background-repeat: no-repeat;
+	padding-left: 40px;
+}
+.like:active, 
+.dislike:active{
+	background-image: url('../images/like.png');
+}
+.like{
+	background-position: 5px 3px;
+}
+.dislike{
+	background-position: 5px -30px;
+}

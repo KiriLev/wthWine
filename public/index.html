@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Генератор этикеток</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header>
+		<img src="images/logo.png" class="logo" alt="">
+		<p class="logo-text">Чернильница</p>
+	</header>
+	<main>
+		<h1>Генератор этикеток</h1>
+		<div class="wrapper">
+			<form class="j-form form">
+				<h3>Выберите цвет вина:</h3>
+				<p class="radio">
+					<input type="radio" name="vine" value="red" checked id="red" class="j-show-new-color">
+					<label for="red">красное</label>
+				</p>
+				<p class="radio">
+					<input type="radio" name="vine" value="white" id="white" class="j-show-new-color">
+					<label for="white">белое</label>
+				</p>
+				<h3>Выберите цвет бутылки:</h3>
+				<p class="radio">
+					<input type="radio" name="bottle" value="dark" checked id="dark" class="j-show-new-color">
+					<label for="dark">темная</label>
+				</p>
+				<p class="radio">
+					<input type="radio" name="bottle" value="transparent" id="transparent" class="j-show-new-color">
+					<label for="transparent">прозрачная</label>
+				</p>
+				<p class="submit-wrapper"><button type="submit" class="btn btn-red j-generate">Генерировать</button></p>
+			</form>
+			<div class="result">
+				<img src="images/red-dark.jpg" class="j-result-image" alt="">
+			</div>
+		</div>
+
+		<div class="second-step" hidden>
+			<div class="second-step__buttons">
+				<button type="button" class="btn btn-success like j-like">Нравится</button>
+				<button type="button" class="btn btn-red dislike j-dislike">Не нравится</button>
+			</div>
+		</div>
+	</main>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/user.js"></script>
+</body>
+</html>
