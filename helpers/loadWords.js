@@ -1,21 +1,19 @@
 const axios = require('axios');
+const fs = require('fs');
 
 module.exports = () => {
+  
   return new Promise((resolve, reject) => {
-
-    const loadNoun = () => axios.get('http://free-generator.ru/generator.php?action=word&type=1');
-    const loadAdjective = () => axios.get('http://free-generator.ru/generator.php?action=word&type=2');
-
-    Promise.all([loadNoun(), loadAdjective()])
-      .then(data => {
-        const word1 = data[0].data.word.word;
-        const word2 = data[1].data.word.word;
-
-        resolve([word1, word2]);
-      })
-      .catch(error => {
-        console.log(error);
-        reject(error);
-      })
+    const filename = '/Users/kirlev/Projects/JS/Hackaton/label-generator-wth-hackathon/namesRus.txt';
+    fs.readFile(filename, 'utf8', function(err, data) {
+      if (err) throw err;
+      const vineTitlesArr = data.split('\n');
+      const rand = Math.floor(Math.random() * vineTitlesArr.length);
+      const baseTitle = vineTitlesArr[rand];
+      const query = `https://paraphraser.ru/api?c=vector&query=${encodeURIComponent(baseTitle)}&lang=ru&type=vector&token=882a9e4abe9c34f3fe8ca0e8479ef64e02b36def&top=5&scores=0&forms=0`;
+          axios.get(query)
+            .then(text => resolve(text.data.response[1].vector))
+            .catch(err => reject(err));
+    });
   });
-}
+};

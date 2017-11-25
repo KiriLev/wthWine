@@ -27,6 +27,7 @@ module.exports = (app) => {
             wstream.on('finish', () => {
               console.log('file has been written');
               generateImage('public/' + fullName, 'public/shab.jpg', 'Good morning' || words.join(' ')).then(() => {
+                console.log()
                 res.send(fullName);
               })
             });
