@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = () => {
 
   return new Promise((resolve, reject) => {
-    const filename = '/Users/kirlev/Projects/JS/Hackaton/label-generator-wth-hackathon/namesRus.txt';
+    const filename = 'namesRus.txt';
     fs.readFile(filename, 'utf8', function(err, data) {
       if (err) throw err;
       const vineTitlesArr = data.split('\n');

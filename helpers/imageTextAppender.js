@@ -8,7 +8,7 @@ function appendText(imgPath, text) {
     
 
     console.log(imgPath)
-    let outputPath = '/Users/kirlev/Projects/JS/Hackaton/label-generator-wth-hackathon/public/final.png';
+    let outputPath = 'public/final.png';
     console.log(outputPath)
 
     gm(imgPath)
