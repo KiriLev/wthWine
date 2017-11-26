@@ -1,4 +1,4 @@
-var Bing = require('node-bing-api')({ accKey: "df71dc906c3f4b698e521f84e3bba21e" });
+var Bing = require('../modules/bing')({ accKey: "df71dc906c3f4b698e521f84e3bba21e" });
 
 module.exports = (search) => new Promise((resolve, reject) => {
   Bing.images(search, {
